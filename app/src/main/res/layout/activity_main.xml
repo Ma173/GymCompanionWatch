@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.wear.widget.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_grey"
+    android:padding="@dimen/box_inset_layout_padding"
+    tools:context=".MainActivity"
+    tools:deviceIds="wear">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/inner_frame_layout_padding"
+        app:boxedEdges="all">
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="205dp"
+            android:layout_height="wrap_content"
+            android:text="@string/gymcompVersion"
+            android:textSize="12sp" />
+        <!-- android:text="@string/hello_world"
+            //tools:text="Hey there" /> -->
+
+    </FrameLayout>
+
+    <android.support.wear.widget.drawer.WearableDrawerLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:nestedScrollingEnabled="true">
+            <LinearLayout
+                android:id="@+id/linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </ScrollView>
+        <android.support.wear.widget.drawer.WearableNavigationDrawerView
+            android:id="@+id/top_drawer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:navigationStyle="multiPage"/>
+
+        <android.support.wear.widget.drawer.WearableActionDrawerView
+            android:id="@+id/bottom_action_drawer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/red"
+            app:drawerContent="@+id/drawerContent"
+            />
+            <!--app:actionMenu="@menu/action_drawer_menu"/-->
+
+
+    </android.support.wear.widget.drawer.WearableDrawerLayout>
+
+</android.support.wear.widget.BoxInsetLayout>
+
